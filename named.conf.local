@@ -1,0 +1,4 @@
+zone "google.de" {
+    type master;
+    file "/etc/bind/db.google.de";
+};

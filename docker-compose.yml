@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  bind9:
+    build: .
+    volumes:
+      - ./named.conf:/etc/bind/named.conf
+      - ./named.conf.options:/etc/bind/named.conf.options
+      - ./named.conf.local:/etc/bind/named.conf.local
+      - ./db.google.de:/etc/bind/db.google.de
+    ports:
+      - "53:53/udp"
+      - "53:53/tcp"
+    restart: unless-stopped
